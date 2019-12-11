@@ -31,9 +31,7 @@ namespace FI.AtividadeEntrevista.DML
         public string Sobrenome { get; set; }
 
         public string Telefone { get; set; }
-        /// <summary>
-        /// CPF campos adiconado
-        /// </summary>
+        
         public string CPF { get; set; }
     }    
 }

@@ -8,21 +8,21 @@
     @LOGRADOURO    VARCHAR (500),
     @EMAIL         VARCHAR (2079),
     @TELEFONE      VARCHAR (15),
-	@CPF           VARCHAR (11),
-	@Id            BIGINT
+	@Id            BIGINT,
+	@CPF           VARCHAR (11)
 AS
 BEGIN
 	UPDATE CLIENTES 
 	SET 
-		NOME = @NOME, 
-		SOBRENOME = @SOBRENOME, 
+		NOME		  = @NOME, 
+		SOBRENOME	  = @SOBRENOME, 
 		NACIONALIDADE = @NACIONALIDADE, 
-		CEP = @CEP, 
-		ESTADO = @ESTADO, 
-		CIDADE = @CIDADE, 
-		LOGRADOURO = @LOGRADOURO, 
-		EMAIL = @EMAIL, 
-		TELEFONE = @TELEFONE,
-		CPF      = @CPF
-	WHERE Id = @Id
+		CEP			  = @CEP, 
+		ESTADO		  = @ESTADO, 
+		CIDADE		  = @CIDADE, 
+		LOGRADOURO	  = @LOGRADOURO, 
+		EMAIL		  = @EMAIL, 
+		TELEFONE	  = @TELEFONE,
+		CPF			  = @CPF
+	WHERE Id	      = @Id
 END

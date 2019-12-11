@@ -10,11 +10,13 @@ namespace WebAtividadeEntrevista
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                         "~/Scripts/jquery-ui-{version}.js"));
-            
-            // Use the development version of Modernizr to develop with and learn from. Then, when you're
-            // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
+
+            bundles.Add(new ScriptBundle("~/bundles/jqueryMask").Include(
+            "~/Scripts/jquery.mask.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
@@ -37,18 +39,11 @@ namespace WebAtividadeEntrevista
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
 
+            bundles.Add(new StyleBundle("~/bundles/beneficiarios").Include(
+                      "~/Scripts/Beneficiario/*.js"));
+
             bundles.Add(new StyleBundle("~/Content/jtable").Include(
                       "~/Scripts/jtable/themes/metro/darkgray/jtable.css"));
-
-            bundles.Add(new StyleBundle("~/bundles/beneficiarios").Include(
-                   "~/Scripts/Beneficiario/*.js"));
-
-            bundles.Add(new ScriptBundle("~/bundles/inputmask").Include(
-          "~/Scripts/jquery.inputmask/inputmask.js",
-          "~/Scripts/jquery.inputmask/jquery.inputmask.js",
-                      "~/Scripts/jquery.inputmask/inputmask.extensions.js",
-                      "~/Scripts/jquery.inputmask/inputmask.date.extensions.js",
-                      "~/Scripts/jquery.inputmask/inputmask.numeric.extensions.js"));
 
 
         }

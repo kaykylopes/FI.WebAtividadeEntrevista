@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace WebAtividadeEntrevista.Validade
+﻿namespace WebAtividadeEntrevista.Validade
 {
     public class Cpf
     {

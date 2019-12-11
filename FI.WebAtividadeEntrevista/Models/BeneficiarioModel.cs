@@ -16,7 +16,6 @@ namespace WebAtividadeEntrevista.Models
         [Required]
         public string Nome { get; set; }
 
-
         [Required]
         public string CPF  { get; set; }
     }

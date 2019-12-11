@@ -89,8 +89,8 @@ namespace WebAtividadeEntrevista.Controllers
 
             if (!Cpf.ValidarCPF(model.CPF))
                 ModelState.AddModelError("CPF", "CPF Inválido");
-            else            
-                model.CPF = model.CPF.Trim().Replace(".", "").Replace("-", "");
+            //else            
+                //model.CPF = model.CPF.Trim().Replace(".", "").Replace("-", "");
 
                 if (!this.ModelState.IsValid)
             {
