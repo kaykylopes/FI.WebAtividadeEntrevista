@@ -78,7 +78,6 @@ namespace WebAtividadeEntrevista.Controllers
                 return Json("Cadastro efetuado com sucesso");
             }
         }
-
         [HttpPost]
         public JsonResult Alterar(ClienteModel model)
         {
