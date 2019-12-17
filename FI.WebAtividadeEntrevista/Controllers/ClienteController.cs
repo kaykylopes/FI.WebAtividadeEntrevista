@@ -16,8 +16,6 @@ namespace WebAtividadeEntrevista.Controllers
         {
             return View();
         }
-
-
         public ActionResult Incluir()
         {
             return View();
@@ -35,7 +33,7 @@ namespace WebAtividadeEntrevista.Controllers
                 model.CPF = model.CPF.Trim().Replace(".", "").Replace("-", "");
 
                 if (bo.VerificarExistencia(model.CPF))
-                    ModelState.AddModelError("CPF", "O CPF Informado Já existe da Base de Dados");
+                    ModelState.AddModelError("CPF", "O CPF Informado Já Cadastrado na Base de Dados");
             }
             
             if (!this.ModelState.IsValid)
@@ -72,11 +70,10 @@ namespace WebAtividadeEntrevista.Controllers
                     Nome = model.Nome,
                     Sobrenome = model.Sobrenome,
                     Telefone = model.Telefone,
-                    CPF = model.CPF
+                    CPF = model.CPF // campo adicionado
                 
                 },
                 beneficiarios);
-
            
                 return Json("Cadastro efetuado com sucesso");
             }
@@ -89,21 +86,20 @@ namespace WebAtividadeEntrevista.Controllers
 
             if (!Cpf.ValidarCPF(model.CPF))
                 ModelState.AddModelError("CPF", "CPF Inválido");
-            //else            
-                //model.CPF = model.CPF.Trim().Replace(".", "").Replace("-", "");
+            else            
+                model.CPF = model.CPF.Trim().Replace(".", "").Replace("-", "");
 
                 if (!this.ModelState.IsValid)
             {
                 List<string> erros = (from item in ModelState.Values
                                       from error in item.Errors
                                       select error.ErrorMessage).ToList();
-
                 Response.StatusCode = 400;
                 return Json(string.Join(Environment.NewLine, erros));
             }
             else
             {
-                #region Trazendo os beneficiarios
+                #region mostrando os beneficiarios
                 List<Beneficiario> BeneficiariosIncluir = new List<Beneficiario>();
                 List<Beneficiario> BeneficiariosUpdate = new List<Beneficiario>();
                 List<long> BeneficiariosDelete = new List<long>();
@@ -132,7 +128,6 @@ namespace WebAtividadeEntrevista.Controllers
                 }
                 #endregion
 
-
                 bo.Alterar(new Cliente()
                 {
                     Id = model.Id,
@@ -145,7 +140,7 @@ namespace WebAtividadeEntrevista.Controllers
                     Nome = model.Nome,
                     Sobrenome = model.Sobrenome,
                     Telefone = model.Telefone,
-                    CPF = model.CPF
+                    CPF = model.CPF // campos adicionado
                 },
                 BeneficiariosIncluir,
                 BeneficiariosUpdate,
@@ -178,7 +173,6 @@ namespace WebAtividadeEntrevista.Controllers
                     Telefone = cliente.Telefone,
                     CPF = cliente.CPF
                 };
-
             
             }
 
